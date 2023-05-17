@@ -1,0 +1,98 @@
+/* Estilos para la página principal */
+
+/* Estilos para el cuerpo */
+body {
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para los encabezados */
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navbar {
+    background: #404040;
+    padding: 5px 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color: aquamarine;
+}
+
+/* Estilos para la sección de productos */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.product-card {
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ddd;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.product-card button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #666;
+}
