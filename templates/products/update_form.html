@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block tittle %}
+E-Commerce Productos UPDATE
+{% endblock%}
+
+{% block content %}
+<h1>Productos legales</h1>
+<h4>Actualización</h4>
+
+<form method="post">
+  {% csrf_token %}
+  {{form}}
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+{% endblock %}

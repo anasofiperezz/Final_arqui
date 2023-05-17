@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Your cart 🛒</h1>
+
+<div>
+    <br>
+</div>
+<table class="table">
+    <tr>
+        <th>Nombre </th>
+        <th>Precio </th>
+        <th>Descripción </th>
+        <th>Marca</th>
+    </tr>
+    {% for o in order %}
+    <tr>
+        <td>{{o.product.name}} </td>
+        <td>{{o.product.price}} </td>
+        <td>{{o.product.description}} </td>
+        <td>{{o.product.brand}}</td>
+        <td><a href="{% url 'delete_productcart' o.id %}">Eliminar</a></td>
+    </tr>
+    {% endfor %}
+
+    <h5>Total: {{cart.cost}}</h5>
+    <h3><a href="{% url 'purchase' %}">Comprar</a></h3>
+
+    {% endblock %}

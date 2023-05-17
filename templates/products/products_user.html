@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Productos legales</h1>
+
+<div>
+    <br>
+</div>
+{% if user.is_authenticated == False %}
+<h4>WARNING: Para agregar productos al carrito considera iniciar sesion</h4>
+{% endif %}
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+        <th>Marca</th>
+    </tr>
+    {% for p in products %}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.stock}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.brand}}</td>
+        {% if user.is_authenticated %}
+        <td><a href="{% url 'add_product' p.id %}">Añadir al carrito</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+
+    {% endblock %}

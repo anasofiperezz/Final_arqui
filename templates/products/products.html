@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Productos legales</h1>
+
+<div>
+    <a href="{% url 'create_product'%}" style="margin: auto;">Añadir producto +</a>
+    <a href="{% url 'create_brand'%}" style="margin: auto;">Añadir Marca +</a>
+    <br>
+</div>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+        <th>Marca</th>
+    </tr>
+    {% for p in products %}
+    <tr>
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.stock}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.brand}}</td>
+        <td><a href="{% url 'update_product' p.id %}">Editar</a></td>
+        <td><a href="{% url 'delete_product' p.id %}">Eliminar</a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}
